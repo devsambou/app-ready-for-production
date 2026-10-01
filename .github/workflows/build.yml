@@ -3,7 +3,7 @@ name: Release Build
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - "v*.*.*"
     branches:
       - main
       - master
@@ -20,14 +20,24 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu'
-          java-version: '17'
+          distribution: "zulu"
+          java-version: "17"
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          channel: "stable"
           cache: true
+
+      - name: Create environment file
+        env:
+          OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+        run: |
+          if [ -z "$OPENWEATHER_API_KEY" ]; then
+            echo "::error::The OPENWEATHER_API_KEY GitHub secret is not configured."
+            exit 1
+          fi
+          printf 'OPENWEATHER_API_KEY=%s\n' "$OPENWEATHER_API_KEY" > .env
 
       - name: Install dependencies
         run: flutter pub get

@@ -1,9 +1,5 @@
 # WeatherApp Pro — Application Météo Production-Ready
 
-[![Lint & Analysis](https://github.com/votre-compte/weather_app/actions/workflows/lint.yml/badge.svg)](https://github.com/votre-compte/weather_app/actions/workflows/lint.yml)
-[![Automated Tests](https://github.com/votre-compte/weather_app/actions/workflows/tests.yml/badge.svg)](https://github.com/votre-compte/weather_app/actions/workflows/tests.yml)
-[![Release Build](https://github.com/votre-compte/weather_app/actions/workflows/build.yml/badge.svg)](https://github.com/votre-compte/weather_app/actions/workflows/build.yml)
-
 Application météo moderne, réactive et prête pour la production, développée avec **Flutter**, architecturée selon les principes de la **Clean Architecture**, motorisée par **Riverpod 2.x** et **GoRouter**, et connectée à l'API **OpenWeatherMap**.
 
 Ce projet respecte les plus hauts standards d'ingénierie logicielle mobile : couverture de tests complète (unitaires, widgets, intégration), zéro warning `flutter analyze`, accessibilité native (`Semantics`), internationalisation dynamique (FR / EN), et pipeline CI/CD automatisé via GitHub Actions.
